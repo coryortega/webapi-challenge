@@ -32,7 +32,7 @@ router.post('/', (req, res) => {
 
 router.get('/', (req, res) => {
 
-    Projects.get(req.params)
+    Projects.get()
         .then(projects => {
         res.status(200).json(projects);
         })
@@ -43,6 +43,20 @@ router.get('/', (req, res) => {
         });
         });
     });
+
+    router.get('/:id/actions', (req, res) => {
+
+        Projects.getProjectActions(req.params.id)
+            .then(projects => {
+            res.status(200).json(projects);
+            })
+            .catch(error => {
+            console.log(error);
+            res.status(500).json({
+                message: 'Error retrieving the actions for the project',
+            });
+            });
+        });
 
     router.get('/:id', (req, res) => {
         Projects.get(req.params.id)

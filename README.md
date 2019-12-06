@@ -56,7 +56,7 @@ It can return data as well as a number indicating success, failure, or other pro
 
 - [ ] How can we partition our application into sub-applications?
 
-same way we do with components in react, just slightly different
+Middleware
 
 ## Minimum Viable Product
 

@@ -32,7 +32,7 @@ router.post('/', (req, res) => {
 
 router.get('/', (req, res) => {
 
-    Actions.get(req.params)
+    Actions.get()
         .then(action => {
         res.status(200).json(action);
         })
